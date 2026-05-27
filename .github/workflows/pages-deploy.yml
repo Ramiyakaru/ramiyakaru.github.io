@@ -32,7 +32,7 @@ jobs:
           bundler-cache: true # Uses clean automated bundler lifecycle management
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
