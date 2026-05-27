@@ -181,7 +181,7 @@ Clone repo:
 git clone https://github.com/RamiyaKaru/ramiyakaru.github.io.git
 ```
 
-![Git clone command](/assets/img/blog1/16.git-clone-command.webp)
+![Git clone command](/assets/img/blog1/16-git-clone-command.webp)
 *Git repository clone command*
 ![Successful clone](/assets/img/blog1/17-after-sucessful-clone.webp)
 *Successfully cloned repository*
