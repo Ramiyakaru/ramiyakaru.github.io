@@ -1,0 +1,33 @@
+---
+---
+
+/* ===== Custom Modern Styling ===== */
+
+/* Wider content */
+.container {
+  max-width: 1100px;
+}
+
+/* Clean typography */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Bigger headings */
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Remove heavy borders */
+.card {
+  border: none;
+  box-shadow: none;
+}
+
+/* Smooth images */
+.post-content img {
+  border-radius: 10px;
+}

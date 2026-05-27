@@ -2,9 +2,11 @@
 
 - type: github
   icon: "fab fa-github"
+  url: "https://github.com/RamiyaKaru" # change to your GitHub homepage
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
+- type: instagram
+  icon: "fab fa-instagram"
+  url: "https://instagram.com/the_it_sandbox" # change to your Instagram homepage
 
 - type: email
   icon: "fas fa-envelope"
