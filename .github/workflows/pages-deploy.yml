@@ -1,5 +1,8 @@
 name: Deploy Jekyll site to Pages
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 on:
   push:
     branches: ["main"]
@@ -12,11 +15,12 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true # Cancels older stuck builds if you push new fixes fast
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15 # Gives bundler plenty of time to resolve deep gem chains
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -24,8 +28,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Specify Ruby version
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          ruby-version: '3.3' # Slightly newer, stable runner environment
+          bundler-cache: true # Uses clean automated bundler lifecycle management
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
