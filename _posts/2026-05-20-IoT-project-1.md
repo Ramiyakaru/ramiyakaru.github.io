@@ -235,7 +235,7 @@ We will start with a simple LED blinking program.
 
 You can access all project source codes from my GitHub repository.
 
-[Code 1]
+[ESP board LED blinker Code](https://github.com/Ramiyakaru/iot-temperature-monitor/blob/main/arduino/01_led_blink/1-led-blink.cpp)
 
 Open Arduino IDE and paste the LED Blink code, then click the **Upload** button located in the top-left corner.
 
@@ -303,6 +303,8 @@ Once the connections are complete, reconnect the board to the computer using the
 Make sure the COM port has not changed.
 
 Next, copy the temperature reading code into Arduino IDE and upload it to the board.
+
+[Temperature sensor readings on serial monitor code](https://github.com/Ramiyakaru/iot-temperature-monitor/blob/main/arduino/02_temperature_serial/2-temp-serial-monitor.cpp)
 
 After uploading:
 
@@ -603,6 +605,9 @@ The completed workflow should look similar to this:
 ![Final Node-RED workflow](assets/img/blog8/23-final-flow.webp)
 *Figure 25: Final Node-RED workflow used to receive and display MQTT temperature data.*
 
+You can download and use the complete workflow JSON file from this link:
+[complete JSON workflow](https://github.com/Ramiyakaru/iot-temperature-monitor/blob/main/node-red/flows.json)
+
 ## Installing MQTT Library for Arduino IDE
 
 Before uploading the ESP8266 MQTT code, install the required MQTT library.
@@ -629,6 +634,8 @@ The PubSubClient library allows Arduino and ESP8266 devices to communicate with 
 *Figure 26: Installing the PubSubClient MQTT library inside Arduino IDE.*
 
 Now copy the Node-RED temperature code into Arduino IDE and upload it to the ESP8266.
+
+[Temperature readings Node-RED dashboard](https://github.com/Ramiyakaru/iot-temperature-monitor/blob/main/arduino/03_temperature_node-red/3-node-red.cpp)
 
 After uploading, open Serial Monitor to confirm temperature data is being published successfully.
 
@@ -691,6 +698,8 @@ This library allows microcontrollers to control addressable RGB LEDs such as Neo
 *Figure 31: Installing the Adafruit NeoPixel library required for RGB LED control.*
 
 Once installed, upload the LED temperature code.
+
+[Changinge LED color with temperature threshold](https://github.com/Ramiyakaru/iot-temperature-monitor/blob/main/arduino/04_temperature_mqtt_rgb/4-led-color-change.cpp)
 
 ## Demonstrating the Temperature-Based RGB LED System
 
