@@ -625,7 +625,7 @@ PubSubClient by Nick O'Leary
 
 The PubSubClient library allows Arduino and ESP8266 devices to communicate with MQTT brokers.
 
-![Installing PubSubClient library](assets/img/blog8/24-installing-pub-sub.webp)
+![Installing PubSubClient library](assets/img/blog8/24-installing-pub-sub-package.webp)
 *Figure 26: Installing the PubSubClient MQTT library inside Arduino IDE.*
 
 Now copy the Node-RED temperature code into Arduino IDE and upload it to the ESP8266.
@@ -687,7 +687,7 @@ Adafruit NeoPixel by Adafruit
 
 This library allows microcontrollers to control addressable RGB LEDs such as NeoPixels and WS2812 LED strips.
 
-![Installing Adafruit NeoPixel library](assets/img/blog8/28-installing-neo-pixel-driver.webp)
+![Installing Adafruit NeoPixel library](assets/img/blog8/28-installing-neo-pixel-driver-package.webp)
 *Figure 31: Installing the Adafruit NeoPixel library required for RGB LED control.*
 
 Once installed, upload the LED temperature code.
