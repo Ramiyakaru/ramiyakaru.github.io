@@ -1,4 +1,11 @@
-# Building an IoT Temperature Monitoring System Using ESP8266, MQTT, Node-RED, and RGB LEDs
+---
+title: "Building an IoT Temperature Monitoring System"
+date: 26-05-20 +1030
+categories: [IoT, Linux, arduino]
+tags: [IoT, arduino github, linux, beginner]
+---
+
+## Building an IoT Temperature Monitoring System Using ESP8266, MQTT, Node-RED, and RGB LEDs
 
 The Internet of Things (IoT) has become one of the most exciting technologies in modern computing. From smart homes and industrial automation to healthcare monitoring and agriculture, IoT devices are everywhere around us. In this blog post, we are going to build our own beginner-friendly IoT project using an ESP8266 microcontroller, a Keyestudio temperature sensor, Node-RED, MQTT, and an RGB LED strip.
 
@@ -184,7 +191,6 @@ Next go to:
 `Tools -> Board -> Boards Manager`
 
 ![Opening the Boards Manager inside Arduino IDE](assets/img/blog8/3-accessing-boards-manager.webp)
-
 *Figure 4: Accessing the Arduino IDE Boards Manager to install additional board packages.*
 
 Search for:
@@ -291,7 +297,7 @@ S -> A0
 ```
 
 ![Temperature sensor wiring diagram](assets/img/blog8/29-wiring-diagram-1.webp)
-
+*Figure 10: Wiring diagram for temperature sensor*
 Once the connections are complete, reconnect the board to the computer using the USB cable.
 
 Make sure the COM port has not changed.
@@ -313,7 +319,7 @@ Set the baud rate to:
 The Serial Monitor should now display temperature readings every two seconds in both Celsius and Fahrenheit.
 
 ![Temperature readings displayed in Arduino Serial Monitor](assets/img/blog8/9-output-on-serial-monitor.webp)
-*Figure 10: Temperature values received from the Keyestudio sensor and displayed inside the Arduino IDE Serial Monitor.*
+*Figure 11: Temperature values received from the Keyestudio sensor and displayed inside the Arduino IDE Serial Monitor.*
 
 ## Sending Temperature Data Wirelessly Using MQTT and Node-RED
 
@@ -413,7 +419,7 @@ Explanation of the packages:
 * `-y` → Automatically confirms installation prompts
 
 ![Installing build-essential, git, and curl](assets/img/blog8/10-installing-build-essential-git-curl.webp)
-*Figure 11: Installing required Linux packages needed for software downloads and compilation.*
+*Figure 12: Installing required Linux packages needed for software downloads and compilation.*
 
 Next install Mosquitto and Mosquitto Clients:
 
@@ -422,7 +428,7 @@ sudo apt install mosquitto mosquitto-clients -y
 ```
 
 ![Installing Mosquitto MQTT broker and clients](assets/img/blog8/11-installing-mosquitto-and-client.webp)
-*Figure 12: Installing the Mosquitto MQTT broker and MQTT client utilities.*
+*Figure 13: Installing the Mosquitto MQTT broker and MQTT client utilities.*
 
 To configure Mosquitto, open the configuration file using a text editor.
 
@@ -433,7 +439,7 @@ sudo mousepad /etc/mosquitto/mosquitto.conf
 ```
 
 ![Opening Mosquitto configuration file](assets/img/blog8/12-configuring-mosquitto-conf-file.webp)
-*Figure 13: Opening the Mosquitto configuration file for editing.*
+*Figure 14: Opening the Mosquitto configuration file for editing.*
 
 Add the following lines to the bottom of the file:
 
@@ -456,7 +462,7 @@ Explanation:
   * Not recommended for production environments due to security risks
 
 ![Adding MQTT listener and anonymous access configuration](assets/img/blog8/13-adding-listener-and-port.webp)
-*Figure 14: Configuring Mosquitto to accept MQTT connections on port 1883.*
+*Figure 15: Configuring Mosquitto to accept MQTT connections on port 1883.*
 
 Now enable and start the Mosquitto service:
 
@@ -476,7 +482,7 @@ Explanation:
   * Immediately starts the service
 
 ![Enabling and starting Mosquitto service](assets/img/blog8/14-enabling-starting-mosquitto.webp)
-*Figure 15: Enabling and starting the Mosquitto MQTT broker service.*
+*Figure 16: Enabling and starting the Mosquitto MQTT broker service.*
 
 ## Installing Node-RED
 
@@ -487,7 +493,7 @@ bash <(curl -sL https://github.com/node-red/linux-installers/releases/latest/dow
 ```
 
 ![Downloading Node-RED installer](assets/img/blog8/15-downloading-node-red.webp)
-*Figure 16: Downloading the automated Node-RED installation script.*
+*Figure 17: Downloading the automated Node-RED installation script.*
 
 This script downloads and installs:
 
@@ -498,7 +504,7 @@ This script downloads and installs:
 The installation may take several minutes.
 
 ![Installing Node-RED packages](assets/img/blog8/16-installing-node-red.webp)
-*Figure 17: Installing Node-RED and required dependencies on Linux.*
+*Figure 18: Installing Node-RED and required dependencies on Linux.*
 
 Once installation completes, enable and start Node-RED:
 
@@ -517,7 +523,7 @@ active (running)
 it confirms Node-RED is operating correctly.
 
 ![Enabling and verifying Node-RED service](assets/img/blog8/17-enabling-starting-confirming-node-red.webp)
-*Figure 18: Enabling, starting, and confirming the Node-RED service status.*
+*Figure 19: Enabling, starting, and confirming the Node-RED service status.*
 
 Before accessing Node-RED, allow MQTT traffic through the firewall:
 
@@ -532,7 +538,7 @@ http://127.0.0.1:1880
 ```
 
 ![Accessing Node-RED dashboard in browser](assets/img/blog8/18-accessing-node-red-dashboard.webp)
-*Figure 19: Accessing the Node-RED editor dashboard through a web browser.*
+*Figure 20: Accessing the Node-RED editor dashboard through a web browser.*
 
 ## Creating the Node-RED Workflow
 
@@ -557,7 +563,7 @@ Configure:
 * Topic: `home/sensor/tempC`
 
 ![Configuring MQTT In node in Node-RED](assets/img/blog8/19-mqtt-in-node.webp)
-*Figure 20: Configuring the MQTT In node to subscribe to the temperature topic.*
+*Figure 21: Configuring the MQTT In node to subscribe to the temperature topic.*
 
 ## Function Node
 
@@ -572,7 +578,7 @@ The Function node allows custom JavaScript processing inside Node-RED flows.
 In this project, it converts string values into floating-point numbers.
 
 ![Function node converting string to float](assets/img/blog8/20-function-node.webp)
-*Figure 21: Using a Function node to convert MQTT string data into numeric values.*
+*Figure 22: Using a Function node to convert MQTT string data into numeric values.*
 
 ## Gauge Node
 
@@ -587,15 +593,15 @@ Configure:
 * Range: `0 - 100`
 
 ![Default gauge node configuration](assets/img/blog8/21-default-gauge-node.webp)
-*Figure 22: Default Gauge node before customization.*
+*Figure 23: Default Gauge node before customization.*
 
 ![Customized temperature gauge settings](assets/img/blog8/22-refined-gauge-node.webp)
-*Figure 23: Customized Gauge node configured for temperature monitoring.*
+*Figure 24: Customized Gauge node configured for temperature monitoring.*
 
 The completed workflow should look similar to this:
 
 ![Final Node-RED workflow](assets/img/blog8/23-final-flow.webp)
-*Figure 24: Final Node-RED workflow used to receive and display MQTT temperature data.*
+*Figure 25: Final Node-RED workflow used to receive and display MQTT temperature data.*
 
 ## Installing MQTT Library for Arduino IDE
 
@@ -618,9 +624,9 @@ PubSubClient by Nick O'Leary
 ```
 
 The PubSubClient library allows Arduino and ESP8266 devices to communicate with MQTT brokers.
-![Installing PubSubClient library](assets/img/blog8/24-installing-pub-sub.webp)
 
-*Figure 25: Installing the PubSubClient MQTT library inside Arduino IDE.*
+![Installing PubSubClient library](assets/img/blog8/24-installing-pub-sub.webp)
+*Figure 26: Installing the PubSubClient MQTT library inside Arduino IDE.*
 
 Now copy the Node-RED temperature code into Arduino IDE and upload it to the ESP8266.
 
@@ -635,15 +641,13 @@ http://127.0.0.1/ui
 This page displays the Node-RED Dashboard interface where the Gauge widget is rendered.
 
 ![Temperature readings shown in serial monitor while publishing MQTT data](assets/img/blog8/25-output-in-serial-monitor.webp)
-
-*Figure 26: ESP8266 publishing temperature readings while displaying them in Serial Monitor.*
+*Figure 27: ESP8266 publishing temperature readings while displaying them in Serial Monitor.*
 
 ![Temperature gauge inside Node-RED dashboard](assets/img/blog8/26-output-in-node-red-ui.webp)
-
-*Figure 27: Real-time temperature visualization inside the Node-RED dashboard.*
+*Figure 28: Real-time temperature visualization inside the Node-RED dashboard.*
 
 ![Additional Node-RED dashboard output](assets/img/blog8/27-output-in-node-red-ui.webp)
-*Figure 28: Live MQTT temperature data displayed through the Node-RED user interface.*
+*Figure 29: Live MQTT temperature data displayed through the Node-RED user interface.*
 
 ## RGB LED Temperature Indicator
 
@@ -664,6 +668,7 @@ USB Red -> Power
 ```
 
 ![LED strip wiring diagram](assets/img/blog8/30-wiring-diagram-2.webp)
+*Figure 30: Wiring diagram for the LED strip and the temperature sensor*
 
 The LED strip requires external 5V power.
 
@@ -683,7 +688,7 @@ Adafruit NeoPixel by Adafruit
 This library allows microcontrollers to control addressable RGB LEDs such as NeoPixels and WS2812 LED strips.
 
 ![Installing Adafruit NeoPixel library](assets/img/blog8/28-installing-neo-pixel-driver.webp)
-*Figure 29: Installing the Adafruit NeoPixel library required for RGB LED control.*
+*Figure 31: Installing the Adafruit NeoPixel library required for RGB LED control.*
 
 Once installed, upload the LED temperature code.
 
@@ -714,8 +719,8 @@ The Node-RED dashboard also updates in real time, allowing temperature values to
 
 The following video demonstrates the completed project in action.
 
-<video controls width="100%">
-  <source src="assets/videos/blog8/output_low.mp4" type="video/mp4">
+<video width="100%" autoplay loop muted playsinline controls preload="metadata">
+  <source src="{{ '/assets/img/blog8/optimized_output.mp4' | relative_url }}" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
