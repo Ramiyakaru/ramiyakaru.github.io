@@ -98,6 +98,8 @@ Before writing any code, it's helpful to think about the overall flow of the pro
 
 Breaking a problem into smaller steps like this is a useful programming habit.
 
+You can download the full code from here: <https://github.com/Ramiyakaru/python-password-generator/blob/main/password_generator.py>
+
 ## Required Modules
 
 ```python
@@ -629,6 +631,8 @@ This project introduces several new Python concepts including:
 * Modular code design
 
 Compared to the first project, this version feels much closer to a real-world application because it interacts directly with the user.
+
+You can download the full code from here: <https://github.com/Ramiyakaru/python-password-generator/blob/main/advanced_password_generator.py>
 
 #### Running the Program
 
