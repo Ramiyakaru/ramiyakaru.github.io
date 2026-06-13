@@ -540,6 +540,8 @@ Compared to Version 1, we are adding:
 * Cleaner code
 * Real-time progress tracking with the tqdm library
 
+If you'd like to follow along or run the code yourself, the complete source code for this version is available on GitHub: <https://github.com/Ramiyakaru/python-port-scanner/blob/main/v2-port-range-support/scanner_v2.py>
+
 #### The UX Problem: Silent Execution vs. Real-Time Feedback
 
 Before we write the new code, we have to think about User Experience (UX). When we scale up our scanner to check thousands of ports concurrently, network operations take time. If we run a script and the terminal remains completely blank for 15 seconds, we will think: Is it working? Did it freeze? Should I cancel it?
@@ -901,6 +903,8 @@ Compared to Version 2, we added:
 
 As a result, the scanner can test many ports at the same time instead of waiting for each scan to finish before starting the next one.
 
+If you'd like to follow along or run the code yourself, the complete source code for this version is available on GitHub: <https://github.com/Ramiyakaru/python-port-scanner/blob/main/v3-multithreaded-scanner/scanner_v3.py>
+
 #### The Problem with Sequential Scanning
 
 In Versions 1 and 2, ports were scanned one after another.
@@ -1229,6 +1233,8 @@ Compared to Version 3, we added:
 * More realistic reconnaissance capabilities
 
 The scanner now attempts to identify services running behind open ports.
+
+If you'd like to follow along or run the code yourself, the complete source code for this version is available on GitHub: <https://github.com/Ramiyakaru/python-port-scanner/blob/main/v4-banner-grabber/scanner_v4.py>
 
 #### What Is Banner Grabbing?
 
@@ -1609,6 +1615,8 @@ Example output file:
 ]
 Scan complete. Results saved to scan_results.json
 ```
+
+If you'd like to follow along or run the code yourself, the complete source code for this version is available on GitHub: <https://github.com/Ramiyakaru/python-port-scanner/blob/main/v5-json-reporting/scanner_v5.py>
 
 #### Why Save Scan Results?
 
